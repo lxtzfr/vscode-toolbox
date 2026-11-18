@@ -9,13 +9,9 @@ Small VS Code helpers that do not deserve an extension each. Plain JavaScript, n
   (`.csproj`, `.sln`…) and ProjectSettings, through the workspace's `files.exclude`. The first three are hidden the
   first time a Unity project is opened. Patterns per group: the `lxtzfrToolbox.unity.patterns` setting.
 
-## Install from source
+## Install
 
-```powershell
-New-Item -ItemType Junction -Path "$env:USERPROFILE\.vscode\extensions\lxtzfr.vscode-toolbox-0.0.1" -Target (Get-Location)
-```
-
-Then **Developer: Reload Window**. A change to the code needs a reload too.
+From the Extensions view: search **LXTZFR Toolbox**, or **Install from VSIX…** with a `.vsix` of the releases.
 
 ## Logs
 

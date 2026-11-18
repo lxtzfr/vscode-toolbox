@@ -1,0 +1,7 @@
+.vscode/**
+# my-stack and Claude files: repo tooling, not part of the extension
+claude/**
+scripts/**
+my-stack.json
+CLAUDE.md
+.gitattributes
