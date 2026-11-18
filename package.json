@@ -1,0 +1,254 @@
+{
+  "name": "vscode-toolbox",
+  "displayName": "LXTZFR Toolbox",
+  "description": "Workspace helpers: a Unity Explorer menu to hide .meta files, generated folders and project files.",
+  "version": "0.0.1",
+  "publisher": "lxtzfr",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lxtzfr/vscode-toolbox"
+  },
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "lxtzfrToolbox.unity.hide.meta",
+        "title": ".meta Files",
+        "category": "Unity"
+      },
+      {
+        "command": "lxtzfrToolbox.unity.show.meta",
+        "title": "✓ .meta Files",
+        "category": "Unity"
+      },
+      {
+        "command": "lxtzfrToolbox.unity.hide.generated",
+        "title": "Generated Folders (Library, Temp, Logs…)",
+        "category": "Unity"
+      },
+      {
+        "command": "lxtzfrToolbox.unity.show.generated",
+        "title": "✓ Generated Folders (Library, Temp, Logs…)",
+        "category": "Unity"
+      },
+      {
+        "command": "lxtzfrToolbox.unity.hide.projectFiles",
+        "title": "Project Files (.csproj, .sln…)",
+        "category": "Unity"
+      },
+      {
+        "command": "lxtzfrToolbox.unity.show.projectFiles",
+        "title": "✓ Project Files (.csproj, .sln…)",
+        "category": "Unity"
+      },
+      {
+        "command": "lxtzfrToolbox.unity.hide.projectSettings",
+        "title": "ProjectSettings",
+        "category": "Unity"
+      },
+      {
+        "command": "lxtzfrToolbox.unity.show.projectSettings",
+        "title": "✓ ProjectSettings",
+        "category": "Unity"
+      },
+      {
+        "command": "lxtzfrToolbox.unity.hideAll",
+        "title": "Hide All Unity Files",
+        "category": "Unity"
+      },
+      {
+        "command": "lxtzfrToolbox.unity.showAll",
+        "title": "Show All Unity Files",
+        "category": "Unity"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "submenu": "lxtzfrToolbox.unity.menu",
+          "when": "view == workbench.explorer.fileView && lxtzfrToolbox.isUnityProject",
+          "group": "navigation@99"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "lxtzfrToolbox.unity.hide.meta",
+          "when": "false"
+        },
+        {
+          "command": "lxtzfrToolbox.unity.show.meta",
+          "when": "false"
+        },
+        {
+          "command": "lxtzfrToolbox.unity.hide.generated",
+          "when": "false"
+        },
+        {
+          "command": "lxtzfrToolbox.unity.show.generated",
+          "when": "false"
+        },
+        {
+          "command": "lxtzfrToolbox.unity.hide.projectFiles",
+          "when": "false"
+        },
+        {
+          "command": "lxtzfrToolbox.unity.show.projectFiles",
+          "when": "false"
+        },
+        {
+          "command": "lxtzfrToolbox.unity.hide.projectSettings",
+          "when": "false"
+        },
+        {
+          "command": "lxtzfrToolbox.unity.show.projectSettings",
+          "when": "false"
+        },
+        {
+          "command": "lxtzfrToolbox.unity.hideAll",
+          "when": "lxtzfrToolbox.isUnityProject"
+        },
+        {
+          "command": "lxtzfrToolbox.unity.showAll",
+          "when": "lxtzfrToolbox.isUnityProject"
+        }
+      ],
+      "explorer/context": [
+        {
+          "submenu": "lxtzfrToolbox.unity.menu",
+          "when": "explorerResourceIsRoot && lxtzfrToolbox.isUnityProject",
+          "group": "9_unity"
+        }
+      ],
+      "lxtzfrToolbox.unity.menu": [
+        {
+          "command": "lxtzfrToolbox.unity.show.meta",
+          "when": "lxtzfrToolbox.unity.hidden.meta",
+          "group": "1_groups@0"
+        },
+        {
+          "command": "lxtzfrToolbox.unity.hide.meta",
+          "when": "!lxtzfrToolbox.unity.hidden.meta",
+          "group": "1_groups@0"
+        },
+        {
+          "command": "lxtzfrToolbox.unity.show.generated",
+          "when": "lxtzfrToolbox.unity.hidden.generated",
+          "group": "1_groups@1"
+        },
+        {
+          "command": "lxtzfrToolbox.unity.hide.generated",
+          "when": "!lxtzfrToolbox.unity.hidden.generated",
+          "group": "1_groups@1"
+        },
+        {
+          "command": "lxtzfrToolbox.unity.show.projectFiles",
+          "when": "lxtzfrToolbox.unity.hidden.projectFiles",
+          "group": "1_groups@2"
+        },
+        {
+          "command": "lxtzfrToolbox.unity.hide.projectFiles",
+          "when": "!lxtzfrToolbox.unity.hidden.projectFiles",
+          "group": "1_groups@2"
+        },
+        {
+          "command": "lxtzfrToolbox.unity.show.projectSettings",
+          "when": "lxtzfrToolbox.unity.hidden.projectSettings",
+          "group": "1_groups@3"
+        },
+        {
+          "command": "lxtzfrToolbox.unity.hide.projectSettings",
+          "when": "!lxtzfrToolbox.unity.hidden.projectSettings",
+          "group": "1_groups@3"
+        },
+        {
+          "command": "lxtzfrToolbox.unity.showAll",
+          "group": "2_all@1"
+        },
+        {
+          "command": "lxtzfrToolbox.unity.hideAll",
+          "group": "2_all@2"
+        }
+      ]
+    },
+    "submenus": [
+      {
+        "id": "lxtzfrToolbox.unity.menu",
+        "label": "Unity: Hidden Files",
+        "icon": "$(eye)"
+      }
+    ],
+    "configuration": {
+      "title": "LXTZFR Toolbox",
+      "properties": {
+        "lxtzfrToolbox.unity.patterns": {
+          "type": "object",
+          "markdownDescription": "`files.exclude` patterns per group, used by the **Unity: Hidden Files** menu. Paths relative to the project root.",
+          "default": {
+            "meta": [
+              "**/*.meta"
+            ],
+            "generated": [
+              "Library",
+              "Temp",
+              "Logs",
+              "obj",
+              "UserSettings",
+              "MemoryCaptures",
+              "Build",
+              "Builds"
+            ],
+            "projectFiles": [
+              "*.csproj",
+              "*.sln",
+              "*.slnx",
+              ".vsconfig",
+              "*.userprefs",
+              "*.pidb"
+            ],
+            "projectSettings": [
+              "ProjectSettings"
+            ]
+          },
+          "properties": {
+            "meta": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "generated": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "projectFiles": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "projectSettings": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  },
+  "packageManager": "pnpm@10.33.2"
+}

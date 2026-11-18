@@ -1,0 +1,24 @@
+*.vsix
+node_modules/
+
+# my-stack:core:.gitignore:start
+# Managed by my-stack (`my-stack update`): do not edit inside this block.
+# IDE and editor folders: per-machine settings, never project config
+.vscode/
+.idea/
+.vs/
+.fleet/
+
+# Ports, links and slot database of this checkout, generated (`pnpm wt env`, a port supervisor): never committed
+.env.local
+# my-stack:core:.gitignore:end
+
+# my-stack:local:start
+# Managed by my-stack (`my-stack update`): do not edit inside this block.
+/claude/my-stack/core/CLAUDE.md
+/claude/my-stack/core/my-stack.md
+/claude/my-stack/core/sentry.md
+/claude/my-stack/core/services.md
+/claude/my-stack/core/tickets.md
+/claude/my-stack/core/worktrees.md
+# my-stack:local:end

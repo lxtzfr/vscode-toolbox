@@ -1,0 +1,21 @@
+{
+  "kits": {
+    "core": {
+      "sha": "47bb907ca06b81cd21702414bc91b239fa96646d"
+    }
+  },
+  "local": [
+    "core"
+  ],
+  "skipDependencies": [
+    "@lxtzfr/wt"
+  ],
+  "files": {
+    "claude/my-stack/core/CLAUDE.md": "sha256:c8bd05f79bf82b9a71ca4c50afb9e8542b42a6a1f9448f241fd3e79849e36b56",
+    "claude/my-stack/core/my-stack.md": "sha256:f3e7b4f36150093619ffbd3a7b1816e52b59ada109014ee4717daa279d1b2887",
+    "claude/my-stack/core/sentry.md": "sha256:c734bb50043f3436b9bba616bfcec7f10fd3f19f6d97319bf4a98e83d562e311",
+    "claude/my-stack/core/services.md": "sha256:4e6310b0f9ebdb6ed2e0e3ce7b9257b40347c51e9e92774dfce94979c4e7d1fe",
+    "claude/my-stack/core/tickets.md": "sha256:0d899697c6d238fd88c51b795b1907b8794eedb513499126e9cd2cc4692b308f",
+    "claude/my-stack/core/worktrees.md": "sha256:b3b5dc66580466510e10ba4006f6a6aa774cba8c7236d2dc5f885872d70b71c0"
+  }
+}
